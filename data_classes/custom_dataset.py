@@ -45,6 +45,9 @@ class CustomImageDataset(Dataset):
         for xml_file in os.listdir(self.data_path_annotations):
             tree = ET.parse(os.path.join(self.data_path_annotations, xml_file))
             root = tree.getroot()
+            size = tree.find('size')
+            width = int(size.find('width').text)
+            height = int(size.find('height').text)
             for obj in root.findall('object'):
                 bbx = obj.find('bndbox')
                 xmin = float(bbx.find('xmin').text)
@@ -56,6 +59,8 @@ class CustomImageDataset(Dataset):
                 result = (
                     root.find('filename').text,
                     label,
+                    width,
+                    height,
                     xmin,
                     ymin,
                     xmax,
@@ -87,7 +92,7 @@ class CustomImageDataset(Dataset):
         # Make dataframe for easier override __getitem__
         self.df = pd.DataFrame(
             self.items, 
-            columns=['name', 'label', 'xmin', 'ymin', 'xmax', 'ymax']
+            columns=['name', 'label', 'width', 'height', 'xmin', 'ymin', 'xmax', 'ymax']
         )
         self.unique_images = self.df['name'].unique()
         

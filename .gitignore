@@ -1,3 +1,6 @@
 data/
 model/
 __pycache__/
+datasets/
+*.pt
+runs/
