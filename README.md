@@ -38,11 +38,11 @@
 
 **Для видео**:
 
-<video src="vids/cat.mp4" controls="controls" style="max-width: 730px;"></video>
+![](vids/cat.gif)
 
-<video src="vids/crowd.mp4" controls="controls" style="max-width: 730px;"></video>
+![](vids/crowd.gif)
 
-<video src="vids/person_with_cat.mp4" controls="controls" style="max-height: 550px;"></video>
+![](vids/person_with_cat.gif)
 
 ## <center>Сравнение результатов
 |Архитектура|mAP@50|Скорость (1 изображение), сек|
