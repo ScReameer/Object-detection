@@ -39,9 +39,7 @@
 **Для видео**:
 
 ![](vids/cat.gif)
-
 ![](vids/crowd.gif)
-
 ![](vids/person_with_cat.gif)
 
 ## <center>Сравнение результатов
